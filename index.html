@@ -14,21 +14,41 @@
       border-radius: 10px;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 400px;
+      max-width: 500px;
       margin: auto;
-      text-align: center;
     }
-    h2 { color: #333; }
-    .info { margin: 20px 0; font-size: 18px; }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .info span {
+      word-break: break-all;
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
     button {
       padding: 10px 20px;
       font-size: 16px;
-      cursor: pointer;
       background: #3498db;
       color: white;
       border: none;
       border-radius: 5px;
-      margin: 5px;
+      cursor: pointer;
+      margin-top: 20px;
     }
     button:hover {
       background: #2980b9;
@@ -38,8 +58,16 @@
 <body>
   <div class="box">
     <h2>Tài khoản hiện tại</h2>
-    <div class="info"><strong>Email:</strong> <span id="email"></span> <button onclick="copyText('email')">📋</button></div>
-    <div class="info"><strong>Mật khẩu:</strong> <span id="password"></span> <button onclick="copyText('password')">📋</button></div>
+
+    <div class="info">
+      <span id="email">Email</span>
+      <button class="copy-btn" onclick="copyToClipboard('email')">📋</button>
+    </div>
+    <div class="info">
+      <span id="password">Mật khẩu</span>
+      <button class="copy-btn" onclick="copyToClipboard('password')">📋</button>
+    </div>
+
     <button onclick="nextAccount()">Làm mới</button>
   </div>
 
@@ -86,14 +114,14 @@
       currentIndex = (currentIndex + 1) % accounts.length;
     }
 
-    function copyText(id) {
+    function copyToClipboard(id) {
       const text = document.getElementById(id).textContent;
       navigator.clipboard.writeText(text).then(() => {
-        alert(`Đã sao chép ${id === 'email' ? 'Email' : 'Mật khẩu'}!`);
+        alert("Đã sao chép: " + text);
       });
     }
 
-    // Hiển thị tài khoản đầu tiên khi load trang
+    // Load tài khoản đầu tiên khi mở trang
     nextAccount();
   </script>
 </body>
