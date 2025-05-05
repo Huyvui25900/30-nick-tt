@@ -56,20 +56,15 @@
 
     ];
 
-    let index = 0;
+let currentIndex = 0;
 
-    function showAccount() {
-      const acc = accounts[index];
-      document.getElementById("email").innerText = acc.email;
-      document.getElementById("password").innerText = acc.password;
-    }
+function nextAccount() {
+  const account = accounts[currentIndex];
+  document.getElementById("email").textContent = account.email;
+  document.getElementById("password").textContent = account.password;
+  currentIndex = (currentIndex + 1) % accounts.length;
+}
 
-    function nextAccount() {
-      index = (index + 1) % accounts.length;
-      showAccount();
-    }
-
-    showAccount();
-  </script>
-</body>
-</html>
+// Gọi hàm ngay khi trang load:
+nextAccount();
+</script>
