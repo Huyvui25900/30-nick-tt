@@ -124,23 +124,30 @@
       { email: "clsmimadjd@hotmail.com", password: "X78dm186" }
     ];
 
-    let currentIndex = 0;
+    function renderAccounts() {
+  const container = document.getElementById("list");
+  accounts.forEach((acc, i) => {
+    const div = document.createElement("div");
+    div.className = "account";
+    div.innerHTML = `
+      <div class="field"><b>STT:</b> ${i + 1}</div>
+      <div class="field"><b>Email:</b> ${acc.email}</div>
+      <div class="field"><b>Mật khẩu:</b> ${acc.password}</div>
+      <div class="field"><b>Link lấy mã:</b> <a href="https://dongvanfb.net/read_mail_box/?mail=${encodeURIComponent(acc.email)}" target="_blank">Xem mã</a></div>
+      <button class="btn" onclick="copyToClipboard('${acc.email} | ${acc.password}')">Copy Email | Mật khẩu</button>
+    `;
+    container.appendChild(div);
+  });
+}
 
-    function nextAccount() {
-      const account = accounts[currentIndex];
-      document.getElementById('email').textContent = account.email;
-      document.getElementById('password').textContent = account.password;
-      currentIndex = (currentIndex + 1) % accounts.length;
-    }
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Đã copy: " + text);
+  });
+}
 
-    function copyToClipboard(fieldId) {
-      const text = document.getElementById(fieldId).textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert(`Đã sao chép: ${text}`);
-      });
-    }
+renderAccounts();
+</script>
 
-    window.onload = nextAccount;
-  </script>
 </body>
 </html>
