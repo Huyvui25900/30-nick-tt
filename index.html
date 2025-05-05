@@ -50,10 +50,16 @@
       border-radius: 6px;
       cursor: pointer;
       display: block;
-      margin: 20px auto 0;
+      margin: 10px auto;
     }
     button:hover {
       background: #2980b9;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
   </style>
 </head>
@@ -63,11 +69,15 @@
 <div class="box">
   <div class="info"><b>Email:</b> <span id="email"></span> <button class="copy-btn" onclick="copy('email')">📋</button></div>
   <div class="info"><b>Mật khẩu:</b> <span id="password"></span> <button class="copy-btn" onclick="copy('password')">📋</button></div>
-  <button onclick="nextAccount()">Làm mới</button>
+  <div class="btn-group">
+    <button onclick="nextAccount()">Làm mới</button>
+    <button onclick="markUsed()">Đã đăng nhập</button>
+    <button onclick="resetAccounts()">Khôi phục cài đặt gốc</button>
+  </div>
 </div>
 
 <script>
-const accounts = [
+const originalAccounts = [
   { email: "bardouhenner@hotmail.com", password: "KA7Sk02#Qf" },
   { email: "idikaalgala@hotmail.com", password: "7NbFcT56" },
   { email: "mikeoubldozr@hotmail.com", password: "buv3EX65" },
@@ -100,14 +110,37 @@ const accounts = [
   { email: "clsmimadjd@hotmail.com", password: "QRxvTn62" }
 ];
 
+let accounts = [...originalAccounts];
 let currentIndex = 0;
 
-function nextAccount() {
+function showAccount() {
+  if (accounts.length === 0) {
+    document.getElementById("email").textContent = "Hết tài khoản";
+    document.getElementById("password").textContent = "";
+    return;
+  }
   const account = accounts[currentIndex];
   document.getElementById("email").textContent = account.email;
   document.getElementById("password").textContent = account.password;
-  currentIndex = (currentIndex + 1) % accounts.length;
 }
+
+function nextAccount() {
+  currentIndex = (currentIndex + 1) % accounts.length;
+  showAccount();
+}
+
+function markUsed() {
+  accounts.splice(currentIndex, 1);
+  if (currentIndex >= accounts.length) currentIndex = 0;
+  showAccount();
+}
+
+function resetAccounts() {
+  accounts = [...originalAccounts];
+  currentIndex = 0;
+  showAccount();
+}
+
 function copy(id) {
   const text = document.getElementById(id).textContent;
   navigator.clipboard.writeText(text).then(() => {
@@ -116,7 +149,7 @@ function copy(id) {
 }
 
 // Hiển thị tài khoản đầu tiên khi tải trang
-nextAccount();
+showAccount();
 </script>
 
 </body>
