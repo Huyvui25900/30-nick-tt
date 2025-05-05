@@ -1,146 +1,70 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>HUY VUI JP</title>
+  <meta charset="UTF-8" />
+  <title>HUY VUI JP CHÀO CÁC CON VỢ</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f2f2f2;
+      background: #f8f9fa;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #dc3545;
       text-align: center;
-      margin: 0;
-      padding: 30px;
     }
-
-    .title {
-      font-size: 28px;
-      font-weight: bold;
-      color: #d62828;
-      margin-bottom: 30px;
-    }
-
-    .box {
-      background: #fff;
+    .account {
+      background: white;
       border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      margin: 10px auto;
       max-width: 500px;
-      margin: auto;
-      padding: 30px;
     }
-
-    .info-group {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #e9ecef;
-      padding: 10px 15px;
-      border-radius: 5px;
-      margin-bottom: 15px;
-    }
-
-    .info-label {
+    .label {
       font-weight: bold;
-      color: #495057;
-    }
-
-    .info-data {
-      flex: 1;
-      margin-left: 10px;
-      text-align: left;
-      overflow-wrap: anywhere;
-    }
-
-    .copy-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
       color: #007bff;
-      font-size: 16px;
     }
-
-    .main-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .main-btn:hover {
-      background-color: #2980b9;
+    .value {
+      font-family: monospace;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="title">HUY VUI JP</div>
-  <div class="box">
-    <div class="info-group">
-      <span class="info-label">Email:</span>
-      <span class="info-data" id="email">---</span>
-      <button class="copy-btn" onclick="copyToClipboard('email')">📋</button>
-    </div>
-    <div class="info-group">
-      <span class="info-label">Mật khẩu:</span>
-      <span class="info-data" id="password">---</span>
-      <button class="copy-btn" onclick="copyToClipboard('password')">📋</button>
-    </div>
-    <button class="main-btn" onclick="nextAccount()">Làm mới</button>
-  </div>
+  <h1>HUY VUI JP CHÀO CÁC CON VỢ</h1>
 
-  <script>
-    const accounts = [
-      { email: "bardouhenner@hotmail.com", password: "FDhLxR54" },
-      { email: "idikaalgala@hotmail.com", password: "6UUkpT33" },
-      { email: "mikeoubldozr@hotmail.com", password: "buv3EX65" },
-      { email: "chuzzjomphe83@hotmail.com", password: "WpeNEB59" },
-      { email: "maickypolson63@hotmail.com", password: "nBm2ON03" },
-      { email: "yucoroliur36@hotmail.com", password: "VrEu8N49" },
-      { email: "zentarrozeen@hotmail.com", password: "VY03ZU67" },
-      { email: "jhanasakena@hotmail.com", password: "xbL6gs48" },
-      { email: "nemettitika@hotmail.com", password: "YIqqrG67" },
-      { email: "klengtmecidl@hotmail.com", password: "LbOzk256" },
-      { email: "khokamakoon13@hotmail.com", password: "xTSdaF89" },
-      { email: "messkuha@hotmail.com", password: "zKaOrZ10" },
-      { email: "okojigoeman@hotmail.com", password: "7RtGV329" },
-      { email: "alexhejunwoo@hotmail.com", password: "SEG6gI15" },
-      { email: "kiouoluram36@hotmail.com", password: "GOMkZA16" },
-      { email: "azzuraeddj@hotmail.com", password: "izMUDH82" },
-      { email: "nahyaamiee@hotmail.com", password: "0l4YtW03" },
-      { email: "peruritonoya@hotmail.com", password: "0y1abq61" },
-      { email: "umrahbeden@hotmail.com", password: "BrXr3T76" },
-      { email: "lfhalminci@hotmail.com", password: "IutRmX46" },
-      { email: "cremeltangy@hotmail.com", password: "QBOq6X78" },
-      { email: "rojnicerkoci@hotmail.com", password: "839omi97" },
-      { email: "ellazbrurok@hotmail.com", password: "RW9GL337" },
-      { email: "emranagiyaz@hotmail.com", password: "a6T6ge01" },
-      { email: "nulsejhan@hotmail.com", password: "q4vMiH70" },
-      { email: "albaobong@hotmail.com", password: "NESWQX81" },
-      { email: "minuumate15@hotmail.com", password: "WnTGAC21" },
-      { email: "randenejiba@hotmail.com", password: "Ipcy9t53" },
-      { email: "myekwapayam21@hotmail.com", password: "Dycxpd19" },
-      { email: "clsmimadjd@hotmail.com", password: "X78dm186" }
-    ];
+  <!-- Dưới đây là 30 nick -->
+  <div class="account"><span class="label">Gmail:</span> <span class="value">bardouhenner@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">FDhLxR54</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">idikaalgala@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">6UUkpT33</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">mikeoubldozr@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">buv3EX65</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">chuzzjomphe83@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">WpeNEB59</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">maickypolson63@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">nBm2ON03</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">yucoroliur36@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">VrEu8N49</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">zentarrozeen@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">VY03ZU67</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">jhanasakena@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">xbL6gs48</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">nemettitika@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">YIqqrG67</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">klengtmecidl@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">LbOzk256</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">khokamakoon13@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">xTSdaF89</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">messkuha@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">zKaOrZ10</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">okojigoeman@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">7RtGV329</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">alexhejunwoo@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">SEG6gI15</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">kiouoluram36@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">GOMkZA16</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">azzuraeddj@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">izMUDH82</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">nahyaamiee@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">0l4YtW03</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">peruritonoya@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">0y1abq61</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">umrahbeden@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">BrXr3T76</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">lfhalminci@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">IutRmX46</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">cremeltangy@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">QBOq6X78</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">rojnicerkoci@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">839omi97</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">ellazbrurok@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">RW9GL337</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">emranagiyaz@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">a6T6ge01</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">nulsejhan@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">q4vMiH70</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">albaobong@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">NESWQX81</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">minuumate15@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">WnTGAC21</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">randenejiba@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">Ipcy9t53</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">myekwapayam21@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">Dycxpd19</span></div>
+  <div class="account"><span class="label">Gmail:</span> <span class="value">clsmimadjd@hotmail.com</span><br><span class="label">Mật khẩu TikTok:</span> <span class="value">X78dm186</span></div>
 
-    let currentIndex = 0;
-
-    function nextAccount() {
-      const account = accounts[currentIndex];
-      document.getElementById('email').textContent = account.email;
-      document.getElementById('password').textContent = account.password;
-      currentIndex = (currentIndex + 1) % accounts.length;
-    }
-
-    function copyToClipboard(fieldId) {
-      const text = document.getElementById(fieldId).textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert(`Đã sao chép: ${text}`);
-      });
-    }
-
-    window.onload = nextAccount;
-  </script>
 </body>
 </html>
