@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chia sẻ tài khoản</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; background: #f2f2f2; }
+    .box { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 400px; margin: auto; text-align: center; }
+    h2 { color: #333; }
+    .info { margin: 20px 0; font-size: 18px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #2980b9; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Tài khoản hiện tại</h2>
+    <div class="info"><strong>Email:</strong> <span id="email"></span></div>
+    <div class="info"><strong>Mật khẩu:</strong> <span id="password"></span></div>
+    <button onclick="nextAccount()">Làm mới</button>
+  </div>
+
+  <script>
+    const accounts = [
+      { email: "user1@example.com", password: "pass1" },
+      { email: "user2@example.com", password: "pass2" },
+      { email: "user3@example.com", password: "pass3" }
+    ];
+
+    let index = 0;
+
+    function showAccount() {
+      const acc = accounts[index];
+      document.getElementById("email").innerText = acc.email;
+      document.getElementById("password").innerText = acc.password;
+    }
+
+    function nextAccount() {
+      index = (index + 1) % accounts.length;
+      showAccount();
+    }
+
+    showAccount();
+  </script>
+</body>
+</html>
