@@ -4,12 +4,34 @@
   <meta charset="UTF-8">
   <title>Chia sẻ tài khoản</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 40px; background: #f2f2f2; }
-    .box { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 400px; margin: auto; text-align: center; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f2f2f2;
+    }
+    .box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+    }
     h2 { color: #333; }
     .info { margin: 20px 0; font-size: 18px; }
-    button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; }
-    button:hover { background: #2980b9; }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #2980b9;
+    }
   </style>
 </head>
 <body>
@@ -21,50 +43,33 @@
   </div>
 
   <script>
-   const accounts = [
-  { email: "bardouhenner@hotmail.com", password: "FDhLxR54" },
-  { email: "idikaalgala@hotmail.com", password: "6UUkpT33" },
-  { email: "mikeoubldozr@hotmail.com", password: "buv3EX65" },
-  { email: "chuzzjomphe83@hotmail.com", password: "WpeNEB59" },
-  { email: "maickypolson63@hotmail.com", password: "nBm2ON03" },
-  { email: "yucoroliur36@hotmail.com", password: "VrEu8N49" },
-  { email: "zentarrozeen@hotmail.com", password: "VY03ZU67" },
-  { email: "jhanasakena@hotmail.com", password: "xbL6gs48" },
-  { email: "nemettitika@hotmail.com", password: "YIqqrG67" },
-  { email: "klengtmecidl@hotmail.com", password: "LbOzk256" },
-  { email: "khokamakoon13@hotmail.com", password: "xTSdaF89" },
-  { email: "messkuha@hotmail.com", password: "zKaOrZ10" },
-  { email: "okojigoeman@hotmail.com", password: "7RtGV329" },
-  { email: "alexhejunwoo@hotmail.com", password: "SEG6gI15" },
-  { email: "kiouoluram36@hotmail.com", password: "GOMkZA16" },
-  { email: "azzuraeddj@hotmail.com", password: "izMUDH82" },
-  { email: "nahyaamiee@hotmail.com", password: "0l4YtW03" },
-  { email: "peruritonoya@hotmail.com", password: "0y1abq61" },
-  { email: "umrahbeden@hotmail.com", password: "BrXr3T76" },
-  { email: "lfhalminci@hotmail.com", password: "IutRmX46" },
-  { email: "cremeltangy@hotmail.com", password: "QBOq6X78" },
-  { email: "rojnicerkoci@hotmail.com", password: "839omi97" },
-  { email: "ellazbrurok@hotmail.com", password: "RW9GL337" },
-  { email: "emranagiyaz@hotmail.com", password: "a6T6ge01" },
-  { email: "nulsejhan@hotmail.com", password: "q4vMiH70" },
-  { email: "albaobong@hotmail.com", password: "NESWQX81" },
-  { email: "minuumate15@hotmail.com", password: "WnTGAC21" },
-  { email: "randenejiba@hotmail.com", password: "Ipcy9t53" },
-  { email: "myekwapayam21@hotmail.com", password: "Dycxpd19" },
-  { email: "clsmimadjd@hotmail.com", password: "X78dm186" }
-];
-
+    const accounts = [
+      { email: "bardouhennern@hotmail.com", password: "FDhLxR54" },
+      { email: "idikaalagala@hotmail.com", password: "6UukpT33" },
+      { email: "mikekoublodz@hotmail.com", password: "buv3EX65" },
+      { email: "ihfalminci@hotmail.com", password: "IuRtnzX46" },
+      { email: "cremeltangy@hotmail.com", password: "Q80gQx67" },
+      { email: "rognikcerkoc@hotmail.com", password: "839om197" },
+      { email: "ellazbruork@hotmail.com", password: "RWiGL33r" },
+      { email: "emranagiyaz@hotmail.com", password: "a6T6qe01" },
+      { email: "nulsejhang@hotmail.com", password: "q4vWH7he" },
+      { email: "alaboobong@hotmail.com", password: "NESWQX81" },
+      { email: "minumunate15@hotmail.com", password: "WnTGAC21" },
+      { email: "randenejtab@hotmail.com", password: "IpcYt953" },
+      { email: "myekwapayam21@hotmail.com", password: "DycyxpD19" },
+      { email: "clsmimadjd@hotmail.com", password: "X78dm186" }
     ];
 
-let currentIndex = 0;
+    let currentIndex = 0;
 
-function nextAccount() {
-  const account = accounts[currentIndex];
-  document.getElementById("email").textContent = account.email;
-  document.getElementById("password").textContent = account.password;
-  currentIndex = (currentIndex + 1) % accounts.length;
-}
+    function nextAccount() {
+      const account = accounts[currentIndex];
+      document.getElementById("email").textContent = account.email;
+      document.getElementById("password").textContent = account.password;
+      currentIndex = (currentIndex + 1) % accounts.length;
+    }
 
-// Gọi hàm ngay khi trang load:
-nextAccount();
-</script>
+    nextAccount(); // Gọi khi trang vừa load
+  </script>
+</body>
+</html>
